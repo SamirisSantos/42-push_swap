@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/04 16:00:15 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:33:27 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 typedef struct stack
 {
 	int	i;
-	int	index;
 	struct	stack *next;
 }l_stack;
 
