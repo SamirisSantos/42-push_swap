@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/04 16:00:15 by sade-ara         ###   ########.fr       */
+/*   Created: 2025/06/04 14:24:52 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/06/04 14:37:47 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-
-typedef struct stack
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	index;
-	struct	stack *next;
-}l_stack;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+	i = 0;
+	while (*str)
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
 
-
-#endif
+void	is_an_int(char i)
+{
+	
+}

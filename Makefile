@@ -6,14 +6,16 @@
 #    By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:29:14 by sade-ara          #+#    #+#              #
-#    Updated: 2025/06/04 14:11:56 by sade-ara         ###   ########.fr        #
+#    Updated: 2025/06/04 14:21:13 by sade-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
+
 RM = rm -rf
 CC = cc
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -g
+
 SRCS = push_swap.c
 
 OBJS = $(SRCS:.c=.o)
