@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/04 16:33:27 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 11:39:33 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	freeList(l_stack* start);
 void	addl_stack(l_stack** start, int value);
 
 int		parser_int(char *str);
-
+void	duplicate_parser(int argc, char **argv);
 
 #endif

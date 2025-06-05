@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:15:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 09:15:50 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 11:39:15 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,23 @@ int	parser_int(char *s)
 		s++;
 	}
 	return ((int)sign * nb);
+}
+
+void	duplicate_parser(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (argv[i] == argv[j])
+				exit(write(2, ERROR_MSG, ERROR_LEN));
+			j++;
+		}
+	}
+	
 }
