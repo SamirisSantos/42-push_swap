@@ -28,8 +28,4 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	is_an_int(char i)
-{
-	
-}
 

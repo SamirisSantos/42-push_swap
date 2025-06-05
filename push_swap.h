@@ -18,14 +18,24 @@
 # include <stdlib.h>
 # include <limits.h>
 
+# define ERROR_MSG "Error\n"
+# define ERROR_LEN (sizeof(ERROR_MSG) - 1)
+
 typedef struct stack
 {
 	int	i;
 	struct	stack *next;
 }l_stack;
 
+l_stack*	newl_stack(int value);
+
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	printList(l_stack* start);
+void	freeList(l_stack* start);
+void	addl_stack(l_stack** start, int value);
+
+int		parser_int(char *str);
 
 
 #endif
