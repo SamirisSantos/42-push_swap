@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:24:52 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 14:25:28 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:24:31 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] == s2[i])
-	{
-		i++;
-		if (s1[i] == '\0' || s2[i] == '\0')
-		{
-			return (s1[i] - s2[i]);
-		}
-	}
-	return (s1[i] - s2[i]);
 }
 
 
