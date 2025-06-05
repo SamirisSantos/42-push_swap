@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:15:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 14:42:26 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:19:14 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,23 @@ int	parser_int(char *s)
 
 void	duplicate_parser(int argc, char **argv)
 {
-	l_stack	*a;
 	int		i;
-	int		nb;
 	int		j;
-
+	int		nb_i;
+	int		nb_j;
+	
 	i = 1;
-	a = NULL;
 	while (i < argc)
 	{
+		nb_i = parser_int(argv[i]);
 		j = i + 1;
 		while (j < argc)
 		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
+			nb_j = parser_int(argv[j]);
+			if (nb_i == nb_j)
 				exit(write(2, ERROR_MSG, ERROR_LEN));
 			j++;
 		}
-		nb = parser_int(argv[i]);
-		addl_stack(&a, nb);
 		i++;
 	}
-	printList(a);
-	freeList(a);
 }
