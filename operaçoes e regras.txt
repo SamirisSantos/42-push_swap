@@ -1,29 +1,41 @@
 🧠 Regras e Operações Disponíveis
-Você pode manipular essas pilhas com os seguintes comandos:
+Você tem duas pilhas, chamadas a e b.
+
+📌 Situação inicial:
+
+A pilha a contém um número aleatório de inteiros únicos, negativos e/ou positivos.
+
+A pilha b começa vazia.
+
+🎯 Objetivo:
+Ordenar a pilha a em ordem crescente usando apenas os comandos abaixo:
 
 🔄 Swaps:
 sa: troca os dois primeiros elementos do topo da pilha a
 
-sb: troca os dois primeiros de b
+sb: troca os dois primeiros elementos do topo da pilha b
 
-ss: faz sa e sb ao mesmo tempo
+ss: executa sa e sb ao mesmo tempo
 
 📤 Push:
 pa: move o topo da pilha b para o topo da pilha a
+(sem efeito se b estiver vazia)
 
 pb: move o topo da pilha a para o topo da pilha b
+(sem efeito se a estiver vazia)
 
 🔁 Rotates (shift up):
-ra: roda todos os elementos da pilha a para cima (o topo vai para o fim)
+ra: roda todos os elementos da pilha a para cima
+(o topo vai para o fim)
 
-rb: o mesmo para b
+rb: roda todos os elementos da pilha b para cima
 
-rr: ra e rb ao mesmo tempo
+rr: executa ra e rb ao mesmo tempo
 
 🔁 Reverse rotates (shift down):
-rra: roda todos os elementos da pilha a para baixo (o último vira topo)
+rra: roda todos os elementos da pilha a para baixo
+(o último vira o topo)
 
-rrb: o mesmo para b
+rrb: roda todos os elementos da pilha b para baixo
 
-rrr: rra e rrb ao mesmo tempo
-
+rrr: executa rra e rrb ao mesmo tempo

@@ -18,7 +18,6 @@ int	main(int argc, char *argv[])
 	int		i;
 	int		nb;
 	
-	stack.a = NULL;
 	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
