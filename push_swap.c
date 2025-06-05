@@ -14,11 +14,12 @@
 
 int	main(int argc, char *argv[])
 {
-	l_stack	*a;
+	t_stack	stack;
 	int		i;
 	int		nb;
 	
-	a = NULL;
+	stack.a = NULL;
+	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
 		return (1);
@@ -26,11 +27,13 @@ int	main(int argc, char *argv[])
 	while (i < argc)
 	{
 		nb = parser_int(argv[i]);
-		addl_stack(&a, nb);
+		addl_stack(&stack.a, nb);
 		i++;
 	}
-	printf("List:\n");
-	printList(a);
-	freeList(a);
+
+	sa(&stack);
+	printList(stack.a);
+
+	freeList(stack.a);
 	return (0);
 }

@@ -27,13 +27,26 @@ typedef struct stack
 	struct	stack *next;
 }l_stack;
 
+typedef struct s_stack
+{
+	l_stack	*a;
+	l_stack	*b;
+
+}t_stack;
+
 l_stack*	newl_stack(int value);
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int n);
 void	printList(l_stack* start);
 void	freeList(l_stack* start);
 void	addl_stack(l_stack** start, int value);
+
+void	swap_top(l_stack **stack);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
 
 int		parser_int(char *str);
 void	duplicate_parser(int argc, char **argv);

@@ -1,0 +1,29 @@
+🧠 Regras e Operações Disponíveis
+Você pode manipular essas pilhas com os seguintes comandos:
+
+🔄 Swaps:
+sa: troca os dois primeiros elementos do topo da pilha a
+
+sb: troca os dois primeiros de b
+
+ss: faz sa e sb ao mesmo tempo
+
+📤 Push:
+pa: move o topo da pilha b para o topo da pilha a
+
+pb: move o topo da pilha a para o topo da pilha b
+
+🔁 Rotates (shift up):
+ra: roda todos os elementos da pilha a para cima (o topo vai para o fim)
+
+rb: o mesmo para b
+
+rr: ra e rb ao mesmo tempo
+
+🔁 Reverse rotates (shift down):
+rra: roda todos os elementos da pilha a para baixo (o último vira topo)
+
+rrb: o mesmo para b
+
+rrr: rra e rrb ao mesmo tempo
+

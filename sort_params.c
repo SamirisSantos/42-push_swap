@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 17:20:38 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/04 14:29:30 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 20:10:22 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,13 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	return (0);
+}
+
+void	ft_swap(int *a, int *b)
+{
+	int	savevalue;
+
+	savevalue = *a;
+	*a = *b;
+	*b = savevalue;
 }

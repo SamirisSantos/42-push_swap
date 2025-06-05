@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 21:45:31 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/04 21:45:31 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 20:36:15 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,15 @@ void addl_stack(l_stack** start, int value) {
 	}
 }
 
-void printList(l_stack* start) {
-	l_stack*	current;
-	
-	current = start;
-	while (current != NULL)
+void	printList(l_stack *stack)
+{
+	while (stack)
 	{
-		printf("%d ", current->i);
-		current = current->next;
+		ft_putnbr(stack->i);
+		ft_putchar(' ');
+		stack = stack->next;
 	}
-	printf("\n");
+	ft_putchar('\n');
 }
 
 void freeList(l_stack* start) {
