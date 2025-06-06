@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 15:18:43 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/06 11:14:21 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char *argv[])
 	int		i;
 	int		nb;
 	
+	stack.a = NULL;
 	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
@@ -30,9 +31,13 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 
-	sa(&stack);
+	pb(&stack);
 	printList(stack.a);
-
+	printList(stack.b);
+	pa(&stack);
+	printList(stack.a);
 	freeList(stack.a);
+	//printList(stack.b);
+	freeList(stack.b);
 	return (0);
 }

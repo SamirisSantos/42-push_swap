@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 15:24:24 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/06 10:51:39 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 # include <limits.h>
 
 # define ERROR_MSG "Error\n"
-# define ERROR_LEN (sizeof(ERROR_MSG) - 1)
+# define MGS_OK "0K\n"
+# define MGS_KO "KO\n"
+# define MGS_LEN(msg) (sizeof(msg) - 1)
 
 typedef struct stack
 {
@@ -47,6 +49,10 @@ void	swap_top(l_stack **stack);
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack);
+
+void	pop_push_top(l_stack **src, l_stack **dest);
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
 
 int		parser_int(char *str);
 void	duplicate_parser(int argc, char **argv);

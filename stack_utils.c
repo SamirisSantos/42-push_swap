@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 21:45:31 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/05 20:36:15 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/06 11:05:18 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ l_stack* newl_stack(int value) {
 
 void addl_stack(l_stack** start, int value) {
 	l_stack*	new;
+	l_stack*	current;
 
 	new = newl_stack(value);
 	if (*start == NULL)
 	{
 		*start = new;
 	} else {
-		l_stack*	current;
 		
 		current = *start;
 		while (current->next != NULL)
