@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/06 10:51:39 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/06 13:44:50 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	ss(t_stack *stack);
 void	pop_push_top(l_stack **src, l_stack **dest);
 void	pa(t_stack *stack);
 void	pb(t_stack *stack);
+
+void	shift_up(l_stack **stack);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
 
 int		parser_int(char *str);
 void	duplicate_parser(int argc, char **argv);

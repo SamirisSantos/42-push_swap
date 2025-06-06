@@ -11,17 +11,17 @@ A pilha b começa vazia.
 Ordenar a pilha a em ordem crescente usando apenas os comandos abaixo:
 
 🔄 Swaps:
-sa: troca os dois primeiros elementos do topo da pilha a
+sa: troca os dois primeiros elementos do topo da pilha a 🆗
 
-sb: troca os dois primeiros elementos do topo da pilha b
+sb: troca os dois primeiros elementos do topo da pilha b 🆗
 
 ss: executa sa e sb ao mesmo tempo
 
 📤 Push:
-pa: move o topo da pilha b para o topo da pilha a
+pa: move o topo da pilha b para o topo da pilha a 🆗
 (sem efeito se b estiver vazia)
 
-pb: move o topo da pilha a para o topo da pilha b
+pb: move o topo da pilha a para o topo da pilha b 🆗
 (sem efeito se a estiver vazia)
 
 🔁 Rotates (shift up):
