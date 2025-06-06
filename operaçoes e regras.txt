@@ -25,17 +25,17 @@ pb: move o topo da pilha a para o topo da pilha b 🆗
 (sem efeito se a estiver vazia)
 
 🔁 Rotates (shift up):
-ra: roda todos os elementos da pilha a para cima
+ra: roda todos os elementos da pilha a para cima 🆗
 (o topo vai para o fim)
 
-rb: roda todos os elementos da pilha b para cima
+rb: roda todos os elementos da pilha b para cima 🆗
 
-rr: executa ra e rb ao mesmo tempo
+rr: executa ra e rb ao mesmo tempo 🆗
 
 🔁 Reverse rotates (shift down):
-rra: roda todos os elementos da pilha a para baixo
+rra: roda todos os elementos da pilha a para baixo 🆗
 (o último vira o topo)
 
-rrb: roda todos os elementos da pilha b para baixo
+rrb: roda todos os elementos da pilha b para baixo 🆗
 
-rrr: executa rra e rrb ao mesmo tempo
+rrr: executa rra e rrb ao mesmo tempo 🆗

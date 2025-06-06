@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/06 14:03:22 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/06 14:48:33 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,26 @@ int	main(int argc, char *argv[])
 	printList(stack.b);
 	ft_putstr("----------------------\n");
 	ft_putstr("Exec rra rrb (equiv. to rrr):\n");
-	// pb(&stack);
-	// printList(stack.a);
-	// printList(stack.b);
+	rrr(&stack);
+	ft_putstr("a: ");
+	printList(stack.a);
+	ft_putstr("b: ");
+	printList(stack.b);
+	ft_putstr("----------------------\n");
+	ft_putstr("Exec sa:\n");
+	sa(&stack);
+	ft_putstr("a: ");
+	printList(stack.a);
+	ft_putstr("b: ");
+	printList(stack.b);
+	ft_putstr("----------------------\n");
+	ft_putstr("Exec pa pa pa:\n");
+	pa(&stack);
+	pa(&stack);
+	pa(&stack);
+	ft_putstr("a: ");
+	printList(stack.a);
+	ft_putstr("b:\n");
 	freeList(stack.a);
 	freeList(stack.b);
 	return (0);
