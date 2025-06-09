@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/06 14:45:14 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/09 12:52:36 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct stack
 {
 	int	i;
+	int	index;
 	struct	stack *next;
 }l_stack;
 
@@ -65,6 +66,7 @@ void	rrb (t_stack *stack);
 void	rrr (t_stack *stack);
 
 int		parser_int(char *str);
+int		check_ordered (l_stack *stack);
 void	duplicate_parser(int argc, char **argv);
 
 #endif
