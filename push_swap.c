@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/09 12:41:37 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/09 14:35:19 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	int		nb;
 	
 	stack.a = NULL;
-	//stack.b = NULL;
+	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
 		return (1);
@@ -30,22 +30,12 @@ int	main(int argc, char *argv[])
 		addl_stack(&stack.a, nb);
 		i++;
 	}
-	printList(stack.a);
 	if(check_ordered (stack.a))
 		return(0);
-	else
-	{
-		while (stack.a && stack.a->next)
-		{
-			if(stack.a->i > stack.a->next->i)
-			{
-				sa(&stack);
-			}
-			stack.a = stack.a->next;
-		}
-	}
-	//printList(stack.b);
+	index_stack(stack.a);
+	sort_number(&stack);
+	printList(stack.a);
 	freeList(stack.a);
-	//freeList(stack.b);
+	freeList(stack.b);
 	return (0);
 }

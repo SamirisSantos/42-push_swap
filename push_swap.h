@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/09 12:52:36 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/09 14:33:33 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,11 @@ void	rrb (t_stack *stack);
 void	rrr (t_stack *stack);
 
 int		parser_int(char *str);
+int		stack_size(l_stack *stack);
 int		check_ordered (l_stack *stack);
+void	index_stack(l_stack *stack);
 void	duplicate_parser(int argc, char **argv);
+
+void	sort_number(t_stack *stack);
 
 #endif
