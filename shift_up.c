@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 14:16:33 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/06 14:34:22 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:40:14 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	shift_up (l_stack **stack)
 void	ra (t_stack *stack)
 {
 	shift_up(&stack->a);
-	//ft_putstr("ra\n");
+	ft_putstr("ra\n");
 }
 
 void	rb (t_stack *stack)
 {
 	shift_up(&stack->b);
-	//ft_putstr("rb\n");
+	ft_putstr("rb\n");
 }
 
 void	rr (t_stack *stack)
 {
 	shift_up(&stack->a);
 	shift_up(&stack->b);
-	//ft_putstr("rr\n");
+	ft_putstr("rr\n");
 }
