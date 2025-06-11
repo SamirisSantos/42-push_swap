@@ -6,36 +6,12 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:55:55 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/11 14:27:08 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:17:23 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_number(t_stack *stack)
-{
-	int i = 0;
-	int size = stack_size(stack->a);
-	int max_bits = 0;
-	int max_index = size - 1;
-	while ((max_index >> max_bits) != 0)
-		max_bits++;
-	while (i < max_bits)
-	{
-		int j = 0;
-		while (j < size)
-		{
-			if (((stack->a->index >> i) & 1) == 0)
-				pb(stack);
-			else
-				ra(stack);
-			j++;
-		}
-		while (stack->b)
-			pa(stack);
-		i++;
-	}
-}
 void	smallest_number(t_stack *stack)
 {
 	l_stack *tmp = stack->a;
@@ -87,6 +63,30 @@ void	sort_fiver_number(t_stack *stack)
 
 	pa(stack);
 	pa(stack);
-	//printList(stack->a);
-	//printList(stack->b);
+	printList(stack->a);
+	printList(stack->b);
+}
+
+int	largest_number(t_stack *stack)
+{
+    l_stack *tmp = stack->a;
+    l_stack *max_node = tmp;
+
+    if (!tmp)
+        return -1;
+    while (tmp)
+    {
+        if (tmp->i > max_node->i)
+        {
+            max_node = tmp;
+        }
+        tmp = tmp->next;
+    }
+	return (max_node->i);
+}
+
+void	sort_number(t_stack *stack)
+{
+	int largest = largest_number(stack);
+    printf("Largest number is: %d\n", largest);
 }
