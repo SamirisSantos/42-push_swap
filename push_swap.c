@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/09 15:41:23 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/11 13:52:11 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ int	main(int argc, char *argv[])
 	}
 	if(check_ordered (stack.a))
 		return(0);
-	index_stack(stack.a);
-	sort_number(&stack);
-	//printList(stack.a);
-	freeList(stack.a);
-	freeList(stack.b);
+	
+	sort_small(&stack);
+	
+	//freeList(stack.a);
 	return (0);
 }
