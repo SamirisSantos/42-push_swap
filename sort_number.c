@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:55:55 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/11 14:25:15 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:27:08 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ void	sort_fiver_number(t_stack *stack)
 {
 	smallest_number(stack);
 	smallest_number(stack);
-	printList(stack->a);
-	printList(stack->b);
 
 	if (stack->b && stack->b->next && stack->b->i > stack->b->next->i)
 		sb(stack);
@@ -89,6 +87,6 @@ void	sort_fiver_number(t_stack *stack)
 
 	pa(stack);
 	pa(stack);
-	printList(stack->a);
-	printList(stack->b);
+	//printList(stack->a);
+	//printList(stack->b);
 }
