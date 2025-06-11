@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:55:55 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/11 14:10:47 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:25:15 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,41 +39,56 @@ void	sort_number(t_stack *stack)
 void	smallest_number(t_stack *stack)
 {
 	l_stack *tmp = stack->a;
-	l_stack *prev = NULL;
 	l_stack *min_node = tmp;
-	l_stack *min_prev = NULL;
+	int		min_index = 0;
+	int		i = 0;
 
 	if (!tmp)
 		return;
-
-	while (tmp->next)
+	while (tmp)
 	{
-		if (tmp->next->i < min_node->i)
+		if (tmp->i < min_node->i)
 		{
-			min_node = tmp->next;
-			min_prev = tmp;
+			min_node = tmp;
+			min_index = i;
 		}
 		tmp = tmp->next;
+		i++;
 	}
-
-	if (min_prev)
-		min_prev->next = min_node->next;
-	else
-		stack->a = min_node->next;
-
-	min_node->next = stack->b;
-	stack->b = min_node;
+	while (min_index > 0)
+	{
+		ra(stack);
+		min_index--;
+	}
+	pb(stack);
 }
 
 void	sort_small(t_stack *stack)
 {
-	l_stack *tmp ;
-	
+		
 	smallest_number(stack);
 
 	if(stack->a->i > stack->a->next->i)
 		sa(stack);
 	pa(stack);
 
+	//printList(stack->a);
+}
+
+void	sort_fiver_number(t_stack *stack)
+{
+	smallest_number(stack);
+	smallest_number(stack);
 	printList(stack->a);
+	printList(stack->b);
+
+	if (stack->b && stack->b->next && stack->b->i > stack->b->next->i)
+		sb(stack);
+
+	sort_small(stack);
+
+	pa(stack);
+	pa(stack);
+	printList(stack->a);
+	printList(stack->b);
 }

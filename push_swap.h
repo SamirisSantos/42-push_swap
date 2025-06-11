@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/11 13:43:20 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:20:19 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	index_stack(l_stack *stack);
 void	duplicate_parser(int argc, char **argv);
 
 void	sort_small(t_stack *stack);
+void	sort_fiver_number(t_stack *stack);
 void	smallest_number(t_stack *stack);
 
 #endif
