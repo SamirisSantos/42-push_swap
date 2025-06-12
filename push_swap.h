@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:29:54 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/06/11 15:17:45 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:24:24 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 # include <limits.h>
 
 # define ERROR_MSG "Error\n"
-# define MGS_OK "0K\n"
-# define MGS_KO "KO\n"
-# define MGS_LEN(msg) (sizeof(msg) - 1)
+# define ERROR_LEN (sizeof(ERROR_MSG) - 1)
 
 typedef struct stack
 {
