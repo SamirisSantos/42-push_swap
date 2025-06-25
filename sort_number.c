@@ -12,84 +12,31 @@
 
 #include "push_swap.h"
 
-void	smallest_number(t_stack *stack)
-{
-	l_stack *tmp = stack->a;
-	l_stack *min_node = tmp;
-	int		min_index = 0;
-	int		i = 0;
 
-	if (!tmp)
-		return;
-	while (tmp)
+void	sort_number_radix(t_stack *stack, int size)
+{
+	int max_bits = 0;
+	int i = 0;
+	int j;
+	l_stack *current;
+
+	while ((size - 1) >> max_bits)
+		max_bits++;
+
+	while (i < max_bits)
 	{
-		if (tmp->i < min_node->i)
+		j = 0;
+		while (j < size)
 		{
-			min_node = tmp;
-			min_index = i;
+			current = stack->a;
+			if (((current->index >> i) & 1) == 0)
+				pb(stack);
+			else
+				ra(stack);
+			j++;
 		}
-		tmp = tmp->next;
+		while (stack->b)
+			pa(stack);
 		i++;
 	}
-	while (min_index > 0)
-	{
-		ra(stack);
-		min_index--;
-	}
-	pb(stack);
-}
-
-void	sort_small(t_stack *stack)
-{
-		
-	smallest_number(stack);
-
-	if(stack->a->i > stack->a->next->i)
-		sa(stack);
-	pa(stack);
-
-	//printList(stack->a);
-}
-
-void	sort_fiver_number(t_stack *stack)
-{
-	smallest_number(stack);
-	smallest_number(stack);
-
-	if (stack->b && stack->b->next && stack->b->i > stack->b->next->i)
-		sb(stack);
-
-	sort_small(stack);
-
-	pa(stack);
-	pa(stack);
-	printList(stack->a);
-	printList(stack->b);
-}
-
-int	largest_number(t_stack *stack)
-{
-    l_stack *tmp = stack->a;
-    l_stack *max_node = tmp;
-
-    if (!tmp)
-        return -1;
-    while (tmp)
-    {
-        if (tmp->i > max_node->i)
-        {
-            max_node = tmp;
-        }
-        tmp = tmp->next;
-    }
-	return (max_node->i);
-}
-
-void	sort_number(t_stack *stack)
-{
-	int largest = largest_number(stack);
-	printf("Largest number is: %d\n", largest);
-
-	
-
 }

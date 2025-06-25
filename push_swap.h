@@ -35,41 +35,40 @@ typedef struct s_stack
 
 }t_stack;
 
+void		ft_putchar(char c);
+void		ft_putstr(char *str);
+void		ft_putnbr(int n);
+
 l_stack*	newl_stack(int value);
+void		printList(l_stack* start);
+void		freeList(l_stack* start);
+void		addl_stack(l_stack** start, int value);
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int n);
-void	printList(l_stack* start);
-void	freeList(l_stack* start);
-void	addl_stack(l_stack** start, int value);
+void		swap_top(l_stack **stack);
+void		sa(t_stack *stack);
+void		sb(t_stack *stack);
+void		ss(t_stack *stack);
 
-void	swap_top(l_stack **stack);
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
+void		pop_push_top(l_stack **src, l_stack **dest);
+void		pa(t_stack *stack);
+void		pb(t_stack *stack);
 
-void	pop_push_top(l_stack **src, l_stack **dest);
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
+void		shift_up(l_stack **stack);
+void		ra(t_stack *stack);
+void		rb(t_stack *stack);
+void		rr(t_stack *stack);
 
-void	shift_up(l_stack **stack);
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
+void		shift_down(l_stack **stack);
+void		rra (t_stack *stack);
+void		rrb (t_stack *stack);
+void		rrr (t_stack *stack);
 
-void	shift_down(l_stack **stack);
-void	rra (t_stack *stack);
-void	rrb (t_stack *stack);
-void	rrr (t_stack *stack);
+int			parser_int(char *str);
+int			stack_size(l_stack *stack);
+int			check_ordered (l_stack *stack);
+void		index_stack(l_stack *stack);
+void		duplicate_parser(int argc, char **argv);
 
-int		parser_int(char *str);
-int		stack_size(l_stack *stack);
-int		check_ordered (l_stack *stack);
-void	index_stack(l_stack *stack);
-void	duplicate_parser(int argc, char **argv);
-
-int		largest_number(t_stack *stack);
-void	sort_number(t_stack *stack);
+void		sort_number_radix(t_stack *stack);
 
 #endif
