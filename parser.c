@@ -28,11 +28,11 @@ int	parser_int(char *s)
 	while (*s)
 	{
 		if (*s < '0' || *s > '9')
-			exit(write(2, ERROR_MSG, MGS_LEN(ERROR_MSG)));
+			exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
 		nb = nb * 10 + (*s - '0');
 		if ((sign == 1 && nb > INT_MAX)
 			|| (sign == -1 && -nb < INT_MIN))
-			exit(write(2, ERROR_MSG, MGS_LEN(ERROR_MSG)));
+			exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
 		s++;
 	}
 	return ((int)sign * nb);
@@ -54,7 +54,7 @@ void	duplicate_parser(int argc, char **argv)
 		{
 			nb_j = parser_int(argv[j]);
 			if (nb_i == nb_j)
-				exit(write(2, ERROR_MSG, MGS_LEN(ERROR_MSG)));
+				exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
 			j++;
 		}
 		i++;

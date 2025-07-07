@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+/*
+ARG=$(seq 1 500 | shuf); ./push_swap $ARG | wc -l
+ARG=$(seq 1 100 | shuf); ./push_swap $ARG | wc -l
+*/
 int	main(int argc, char *argv[])
 {
 	t_stack	stack;

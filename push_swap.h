@@ -38,6 +38,7 @@ typedef struct s_stack
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putnbr(int n);
+size_t		ft_strlen(const char *c);
 
 l_stack*	newl_stack(int value);
 void		printList(l_stack* start);
@@ -69,6 +70,9 @@ int			check_ordered (l_stack *stack);
 void		index_stack(l_stack *stack);
 void		duplicate_parser(int argc, char **argv);
 
-void		sort_number_radix(t_stack *stack);
+void		sort_number_radix(t_stack *stack, int size);
+void		sort_number(t_stack *stack);
+void		sort_five(t_stack *stack);
+void		sort_three(t_stack *stack);
 
 #endif

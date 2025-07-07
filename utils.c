@@ -24,6 +24,19 @@ void	ft_putstr(char *str)
 		str++;
 	}
 }
+
+size_t	ft_strlen(const char *c)
+{
+	int	i;
+
+	i = 0;
+	while (c[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 void	ft_putnbr(int n)
 {
 	int		i;

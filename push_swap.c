@@ -17,12 +17,12 @@ int	main(int argc, char *argv[])
 	t_stack	stack;
 	int		i;
 	int		nb;
-	
+
 	stack.a = NULL;
 	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
-		return (1);
+		return (0);
 	duplicate_parser(argc, argv);
 	while (i < argc)
 	{
@@ -30,12 +30,12 @@ int	main(int argc, char *argv[])
 		addl_stack(&stack.a, nb);
 		i++;
 	}
-	if(check_ordered (stack.a))
-		return(0);
-	
+	if (check_ordered(stack.a))
+	{
+		freeList(stack.a);
+		return (0);
+	}
 	sort_number(&stack);
-
-	
 	freeList(stack.a);
 	freeList(stack.b);
 	return (0);
