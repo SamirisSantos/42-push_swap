@@ -19,20 +19,22 @@ int	parser_int(char *s)
 
 	nb = 0;
 	sign = 1;
+	if (*s == '\0' || *s < '0' || *s > '9')
+	{
+		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
+		exit(EXIT_FAILURE);
+	}
 	if (*s == '-' || *s == '+')
-	{	
-		if(*s == '-')
+	{
+		if (*s == '-')
 			sign = -1;
 		s++;
 	}
 	while (*s)
 	{
-		if (*s < '0' || *s > '9')
-			exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
 		nb = nb * 10 + (*s - '0');
-		if ((sign == 1 && nb > INT_MAX)
-			|| (sign == -1 && -nb < INT_MIN))
-			exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
+		if ((sign == 1 && nb > INT_MAX) || (sign == -1 && - nb < INT_MIN))
+			write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
 		s++;
 	}
 	return ((int)sign * nb);
@@ -44,7 +46,7 @@ void	duplicate_parser(int argc, char **argv)
 	int		j;
 	int		nb_i;
 	int		nb_j;
-	
+
 	i = 1;
 	while (i < argc)
 	{
@@ -54,18 +56,18 @@ void	duplicate_parser(int argc, char **argv)
 		{
 			nb_j = parser_int(argv[j]);
 			if (nb_i == nb_j)
-				exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
+				write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
 			j++;
 		}
 		i++;
 	}
 }
 
-int	check_ordered (l_stack *stack)
+int	check_ordered(t_l_stack *stack)
 {
 	while (stack && stack->next)
 	{
-		if(stack->i > stack->next->i)
+		if (stack->i > stack->next->i)
 			return (0);
 		stack = stack->next;
 	}

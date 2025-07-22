@@ -12,25 +12,28 @@
 
 #include "push_swap.h"
 
-l_stack* newl_stack(int value) {
-	l_stack* new;
+t_l_stack	*newl_stack(int value)
+{
+	t_l_stack	*new;
 
-	new = (l_stack*)malloc(sizeof(l_stack));
+	new = (t_l_stack *)malloc(sizeof (t_l_stack));
 	new->i = value;
 	new->next = NULL;
-	return new;
+	return (new);
 }
 
-void addl_stack(l_stack** start, int value) {
-	l_stack*	new;
-	l_stack*	current;
+void	addl_stack(t_l_stack **start, int value)
+{
+	t_l_stack	*new;
+	t_l_stack	*current;
 
 	new = newl_stack(value);
 	if (*start == NULL)
 	{
 		*start = new;
-	} else {
-		
+	}
+	else
+	{
 		current = *start;
 		while (current->next != NULL)
 			current = current->next;
@@ -38,7 +41,7 @@ void addl_stack(l_stack** start, int value) {
 	}
 }
 
-void	printList(l_stack *stack)
+void	print_list(t_l_stack *stack)
 {
 	while (stack)
 	{
@@ -49,20 +52,9 @@ void	printList(l_stack *stack)
 	ft_putchar('\n');
 }
 
-void freeList(l_stack *start) {
-	l_stack* current;
-
-	current = start;
-	while (current != NULL) {
-		l_stack* temp = current;
- 		current = current->next;
-		free(temp);
-	}
-}
-
-int	 stack_size(l_stack *stack)
+int	stack_size(t_l_stack *stack)
 {
-	int	 size;
+	int	size;
 
 	size = 0;
 	while (stack)
@@ -70,14 +62,14 @@ int	 stack_size(l_stack *stack)
 		size++;
 		stack = stack->next;
 	}
-	return size;	
+	return (size);
 }
 
-void	index_stack(l_stack *stack)
+void	index_stack(t_l_stack *stack)
 {
-	l_stack	*temp_a;
-	l_stack	*temp_b;
-	int		index;
+	t_l_stack	*temp_a;
+	t_l_stack	*temp_b;
+	int			index;
 
 	temp_a = stack;
 	while (temp_a)
@@ -86,7 +78,7 @@ void	index_stack(l_stack *stack)
 		temp_b = stack;
 		while (temp_b)
 		{
-			if(temp_b->i < temp_a->i)
+			if (temp_b->i < temp_a->i)
 				index++;
 			temp_b = temp_b->next;
 		}

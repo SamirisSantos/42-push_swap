@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	pop_push_top (l_stack **src, l_stack **dest)
+void	pop_push_top(t_l_stack **src, t_l_stack **dest)
 {
-	l_stack *temp;
+	t_l_stack	*temp;
 
 	if (!src)
 		return ;
@@ -23,13 +23,14 @@ void	pop_push_top (l_stack **src, l_stack **dest)
 	temp->next = *dest;
 	*dest = temp;
 }
-void	pa (t_stack *stack)
+
+void	pa(t_stack *stack)
 {
 	pop_push_top(&stack->b, &stack->a);
 	ft_putstr("pa\n");
 }
 
-void	pb (t_stack *stack)
+void	pb(t_stack *stack)
 {
 	pop_push_top(&stack->a, &stack->b);
 	ft_putstr("pb\n");

@@ -13,8 +13,9 @@
 #include "push_swap.h"
 
 /*
-ARG=$(seq 1 500 | shuf); ./push_swap $ARG | wc -l
-ARG=$(seq 1 100 | shuf); ./push_swap $ARG | wc -l
+ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
+shuf -i 1-100 -n 100: Gera 100 números únicos aleatórios entre 1 e 100.
+tr '\n' ' ': Transforma as quebras de linha em espaços para ficar como argumento único.
 */
 int	main(int argc, char *argv[])
 {

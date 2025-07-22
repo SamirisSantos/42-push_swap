@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+void	free_list(t_l_stack *start)
+{
+	t_l_stack	*current;
+	t_l_stack	*temp;
+
+	current = start;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	stack;
@@ -22,7 +36,7 @@ int	main(int argc, char *argv[])
 	stack.b = NULL;
 	i = 1;
 	if (argc < 2)
-		return (0);
+		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
 	duplicate_parser(argc, argv);
 	while (i < argc)
 	{
@@ -32,11 +46,11 @@ int	main(int argc, char *argv[])
 	}
 	if (check_ordered(stack.a))
 	{
-		freeList(stack.a);
+		free_list(stack.a);
 		return (0);
 	}
 	sort_number(&stack);
-	freeList(stack.a);
-	freeList(stack.b);
+	free_list(stack.a);
+	free_list(stack.b);
 	return (0);
 }

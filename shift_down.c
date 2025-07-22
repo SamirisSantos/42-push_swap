@@ -12,36 +12,35 @@
 
 #include "push_swap.h"
 
-void	shift_down (l_stack **stack)
+void	shift_down(t_l_stack **stack)
 {
-	l_stack *before;
-	l_stack *last;
+	t_l_stack	*before;
+	t_l_stack	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	
 	before = *stack;
-	while(before->next->next != NULL)
-		before  = before->next;
+	while (before->next->next != NULL)
+		before = before->next;
 	last = before->next;
 	before->next = NULL;
 	last->next = *stack;
 	*stack = last;
 }
 
-void	rra (t_stack *stack)
+void	rra(t_stack *stack)
 {
 	shift_down(&stack->a);
 	ft_putstr("rra\n");
 }
 
-void	rrb (t_stack *stack)
+void	rrb(t_stack *stack)
 {
 	shift_down(&stack->b);
 	ft_putstr("rrb\n");
 }
 
-void	rrr (t_stack *stack)
+void	rrr(t_stack *stack)
 {
 	shift_down(&stack->a);
 	shift_down(&stack->b);

@@ -14,10 +14,13 @@
 
 void	sort_three(t_stack *stack)
 {
-	int	a = stack->a->i;
-	int	b = stack->a->next->i;
-	int	c = stack->a->next->next->i;
+	int	a;
+	int	b;
+	int	c;
 
+	a = stack->a->i;
+	b = stack->a->next->i;
+	c = stack->a->next->next->i;
 	if (a > b && b < c && a < c)
 		sa(stack);
 	else if (a > b && b > c)
@@ -46,18 +49,17 @@ void	sort_five(t_stack *stack)
 			ra(stack);
 	}
 	sort_three(stack);
-	if (stack->b->index < stack->b->next->index)
+	if (stack_size(stack->b) > 1 && stack->b->index < stack->b->next->index)
 		sb(stack);
-
 	pa(stack);
 	pa(stack);
 }
 
 void	sort_number_radix(t_stack *stack, int size)
 {
-	int max_bits;
-	int i;
-	int j;
+	int	max_bits;
+	int	i;
+	int	j;
 
 	max_bits = 0;
 	i = 0;
@@ -82,8 +84,8 @@ void	sort_number_radix(t_stack *stack, int size)
 
 void	sort_number(t_stack *stack)
 {
-	int size;
-	
+	int	size;
+
 	size = stack_size(stack->a);
 	if (size <= 1 || check_ordered(stack->a))
 		return ;
@@ -95,7 +97,10 @@ void	sort_number(t_stack *stack)
 	else if (size == 3)
 		sort_three(stack);
 	else if (size <= 5)
+	{
+		index_stack(stack->a);
 		sort_five(stack);
+	}
 	else
 	{
 		index_stack(stack->a);

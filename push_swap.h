@@ -19,55 +19,54 @@
 # include <limits.h>
 
 # define ERROR_MSG "Error\n"
-# define ERROR_LEN (sizeof(ERROR_MSG) - 1)
 
 typedef struct stack
 {
-	int	i;
-	int	index;
-	struct	stack *next;
-}l_stack;
+	int				i;
+	int				index;
+	struct stack	*next;
+}	t_l_stack;
 
 typedef struct s_stack
 {
-	l_stack	*a;
-	l_stack	*b;
+	t_l_stack	*a;
+	t_l_stack	*b;
 
-}t_stack;
+}	t_stack;
 
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putnbr(int n);
 size_t		ft_strlen(const char *c);
 
-l_stack*	newl_stack(int value);
-void		printList(l_stack* start);
-void		freeList(l_stack* start);
-void		addl_stack(l_stack** start, int value);
+t_l_stack	*newl_stack(int value);
+void		print_list(t_l_stack *start);
+void		free_list(t_l_stack *start);
+void		addl_stack(t_l_stack **start, int value);
 
-void		swap_top(l_stack **stack);
+void		swap_top(t_l_stack **stack);
 void		sa(t_stack *stack);
 void		sb(t_stack *stack);
 void		ss(t_stack *stack);
 
-void		pop_push_top(l_stack **src, l_stack **dest);
+void		pop_push_top(t_l_stack **src, t_l_stack **dest);
 void		pa(t_stack *stack);
 void		pb(t_stack *stack);
 
-void		shift_up(l_stack **stack);
+void		shift_up(t_l_stack **stack);
 void		ra(t_stack *stack);
 void		rb(t_stack *stack);
 void		rr(t_stack *stack);
 
-void		shift_down(l_stack **stack);
-void		rra (t_stack *stack);
-void		rrb (t_stack *stack);
-void		rrr (t_stack *stack);
+void		shift_down(t_l_stack **stack);
+void		rra(t_stack *stack);
+void		rrb(t_stack *stack);
+void		rrr(t_stack *stack);
 
 int			parser_int(char *str);
-int			stack_size(l_stack *stack);
-int			check_ordered (l_stack *stack);
-void		index_stack(l_stack *stack);
+int			stack_size(t_l_stack *stack);
+int			check_ordered(t_l_stack *stack);
+void		index_stack(t_l_stack *stack);
 void		duplicate_parser(int argc, char **argv);
 
 void		sort_number_radix(t_stack *stack, int size);
