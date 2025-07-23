@@ -34,7 +34,10 @@ int	parser_int(char *s)
 	{
 		nb = nb * 10 + (*s - '0');
 		if ((sign == 1 && nb > INT_MAX) || (sign == -1 && - nb < INT_MIN))
+		{
 			write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
+			exit(EXIT_FAILURE);
+		}
 		s++;
 	}
 	return ((int)sign * nb);
