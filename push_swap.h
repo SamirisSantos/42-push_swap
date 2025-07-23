@@ -67,7 +67,7 @@ int			parser_int(char *str);
 int			stack_size(t_l_stack *stack);
 int			check_ordered(t_l_stack *stack);
 void		index_stack(t_l_stack *stack);
-void		duplicate_parser(int argc, char **argv);
+int			duplicate_parser(int argc, char **argv);
 
 void		sort_number_radix(t_stack *stack, int size);
 void		sort_number(t_stack *stack);

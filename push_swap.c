@@ -37,14 +37,13 @@ int	main(int argc, char *argv[])
 	i = 1;
 	if (argc < 2)
 		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
-	duplicate_parser(argc, argv);
 	while (i < argc)
 	{
 		nb = parser_int(argv[i]);
 		addl_stack(&stack.a, nb);
 		i++;
 	}
-	if (check_ordered(stack.a))
+	if (check_ordered(stack.a) || duplicate_parser(argc, argv))
 	{
 		free_list(stack.a);
 		return (0);

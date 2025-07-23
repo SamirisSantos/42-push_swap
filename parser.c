@@ -19,16 +19,16 @@ int	parser_int(char *s)
 
 	nb = 0;
 	sign = 1;
-	if (*s == '\0' || *s < '0' || *s > '9')
-	{
-		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
-		exit(EXIT_FAILURE);
-	}
 	if (*s == '-' || *s == '+')
 	{
 		if (*s == '-')
 			sign = -1;
 		s++;
+	}
+	if (*s == '\0' || *s < '0' || *s > '9')
+	{
+		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
+		exit(EXIT_FAILURE);
 	}
 	while (*s)
 	{
@@ -40,7 +40,7 @@ int	parser_int(char *s)
 	return ((int)sign * nb);
 }
 
-void	duplicate_parser(int argc, char **argv)
+int	duplicate_parser(int argc, char **argv)
 {
 	int		i;
 	int		j;
@@ -56,11 +56,15 @@ void	duplicate_parser(int argc, char **argv)
 		{
 			nb_j = parser_int(argv[j]);
 			if (nb_i == nb_j)
+			{
 				write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
+				exit(EXIT_FAILURE);
+			}
 			j++;
 		}
 		i++;
 	}
+	return(0);
 }
 
 int	check_ordered(t_l_stack *stack)
