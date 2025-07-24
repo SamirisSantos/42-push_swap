@@ -26,28 +26,36 @@ void	free_list(t_l_stack *start)
 	}
 }
 
+void	free_split(char **res)
+{
+	int	j;
+
+	j = 0;
+	if (!res)
+		return ;
+	while (res[j])
+	{
+		free(res[j]);
+		j++;
+	}
+	free(res);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	stack;
-	int		i;
-	int		nb;
 
 	stack.a = NULL;
 	stack.b = NULL;
-	i = 1;
 	if (argc < 2)
-		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
-	while (i < argc)
-	{
-		nb = parser_int(argv[i]);
-		addl_stack(&stack.a, nb);
-		i++;
-	}
-	if (check_ordered(stack.a) || duplicate_parser(argc, argv))
+		return (0);
+	parse_args(&stack, argc, argv);
+	if (check_ordered(stack.a))
 	{
 		free_list(stack.a);
 		return (0);
 	}
+	duplicate_parser(stack.a);
 	sort_number(&stack);
 	free_list(stack.a);
 	free_list(stack.b);

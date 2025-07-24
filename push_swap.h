@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdint.h>
 
 # define ERROR_MSG "Error\n"
 
@@ -38,6 +39,9 @@ void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putnbr(int n);
 size_t		ft_strlen(const char *c);
+char		**ft_split(char const *s, char c);
+void		free_split(char **res);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 t_l_stack	*newl_stack(int value);
 void		print_list(t_l_stack *start);
@@ -67,7 +71,8 @@ int			parser_int(char *str);
 int			stack_size(t_l_stack *stack);
 int			check_ordered(t_l_stack *stack);
 void		index_stack(t_l_stack *stack);
-int			duplicate_parser(int argc, char **argv);
+void		duplicate_parser(t_l_stack *stack);
+void		parse_args(t_stack *stack, int argc, char **argv);
 
 void		sort_number_radix(t_stack *stack, int size);
 void		sort_number(t_stack *stack);
