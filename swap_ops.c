@@ -17,7 +17,7 @@ void	swap_top(t_l_stack **stack)
 	t_l_stack	*fst;
 	t_l_stack	*snd;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	fst = *stack;
 	snd = fst->next;

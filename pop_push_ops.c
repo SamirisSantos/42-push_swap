@@ -16,7 +16,7 @@ void	pop_push_top(t_l_stack **src, t_l_stack **dest)
 {
 	t_l_stack	*temp;
 
-	if (!src)
+	if (!src || !*src || !(*src)->next)
 		return ;
 	temp = *src;
 	*src = (*src)->next;

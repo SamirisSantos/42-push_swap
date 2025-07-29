@@ -17,7 +17,7 @@ void	shift_down(t_l_stack **stack)
 	t_l_stack	*before;
 	t_l_stack	*last;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	before = *stack;
 	while (before->next->next != NULL)

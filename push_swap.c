@@ -50,12 +50,12 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	parse_args(&stack, argc, argv);
+	duplicate_parser(stack.a);
 	if (check_ordered(stack.a))
 	{
 		free_list(stack.a);
 		return (0);
 	}
-	duplicate_parser(stack.a);
 	sort_number(&stack);
 	free_list(stack.a);
 	free_list(stack.b);
