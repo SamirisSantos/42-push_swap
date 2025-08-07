@@ -44,7 +44,7 @@ void		free_split(char **res);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 t_l_stack	*newl_stack(int value);
-void		print_list(t_l_stack *start);
+void		exit_error(t_stack *stack);
 void		free_list(t_l_stack *start);
 void		addl_stack(t_l_stack **start, int value);
 
@@ -67,7 +67,7 @@ void		rra(t_stack *stack);
 void		rrb(t_stack *stack);
 void		rrr(t_stack *stack);
 
-int			parser_int(char *str);
+int			parser_int(char *s, t_stack *stack);
 int			stack_size(t_l_stack *stack);
 int			check_ordered(t_l_stack *stack);
 void		index_stack(t_l_stack *stack);

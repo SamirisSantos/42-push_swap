@@ -12,17 +12,14 @@
 
 #include "push_swap.h"
 
-static int	not_number(char *s)
+static int	not_number(char *s, t_stack *stack)
 {
 	if (*s == '\0' || *s < '0' || *s > '9')
-	{
-		write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
-		exit(EXIT_FAILURE);
-	}
+		exit_error(stack);
 	return (0);
 }
 
-int	parser_int(char *s)
+int	parser_int(char *s, t_stack *stack)
 {
 	long	nb;
 	int		sign;
@@ -35,16 +32,13 @@ int	parser_int(char *s)
 			sign = -1;
 		s++;
 	}
-	not_number(s);
+	not_number(s, stack);
 	while (*s)
 	{
-		not_number(s);
+		not_number(s, stack);
 		nb = nb * 10 + (*s - '0');
 		if ((sign == 1 && nb > INT_MAX) || (sign == -1 && - nb < INT_MIN))
-		{
-			write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
-			exit(EXIT_FAILURE);
-		}
+			exit_error(stack);
 		s++;
 	}
 	return ((int)sign * nb);
@@ -63,6 +57,7 @@ void	duplicate_parser(t_l_stack *stack)
 		{
 			if (current->i == checker->i)
 			{
+				free_list(stack);
 				write(2, ERROR_MSG, ft_strlen(ERROR_MSG));
 				exit(EXIT_FAILURE);
 			}
@@ -95,11 +90,11 @@ void	parse_args(t_stack *stack, int argc, char **argv)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			exit(write(2, ERROR_MSG, ft_strlen(ERROR_MSG)));
+			exit_error(stack);
 		j = 0;
 		while (split[j])
 		{
-			nb = parser_int(split[j]);
+			nb = parser_int(split[j], stack);
 			addl_stack(&stack->a, nb);
 			j++;
 		}

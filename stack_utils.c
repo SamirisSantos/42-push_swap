@@ -41,15 +41,15 @@ void	addl_stack(t_l_stack **start, int value)
 	}
 }
 
-void	print_list(t_l_stack *stack)
+void	exit_error(t_stack *stack)
 {
-	while (stack)
+	if (stack)
 	{
-		ft_putnbr(stack->i);
-		ft_putchar(' ');
-		stack = stack->next;
+		free_list(stack->a);
+		free_list(stack->b);
 	}
-	ft_putchar('\n');
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
 
 int	stack_size(t_l_stack *stack)
