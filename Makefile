@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+         #
+#    By: samiris <samiris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 12:29:14 by sade-ara          #+#    #+#              #
-#    Updated: 2025/07/24 16:51:20 by sade-ara         ###   ########.fr        #
+#    Updated: 2025/08/07 22:39:30 by samiris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 RM = rm -rf
 CC = cc
-CFLAGS = -Wextra -Werror -Wall -g
+CFLAGS = -Wextra -Werror -Wall -g -O0
 
 SRCS = push_swap.c stack_utils.c parser.c pop_push_ops.c\
 		shift_down.c shift_up.c swap_ops.c \
@@ -22,7 +22,7 @@ SRCS = push_swap.c stack_utils.c parser.c pop_push_ops.c\
 
 OBJ = $(SRCS:.c=.o)
 
-HEADER = push_swap.h
+HEADER = push_swap.hß
 
 all: $(NAME)
 
