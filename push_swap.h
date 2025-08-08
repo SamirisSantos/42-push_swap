@@ -67,7 +67,7 @@ void		rra(t_stack *stack);
 void		rrb(t_stack *stack);
 void		rrr(t_stack *stack);
 
-int			parser_int(char *s, t_stack *stack);
+int			parser_int(char *s, t_stack *stack, char **split);
 int			stack_size(t_l_stack *stack);
 int			check_ordered(t_l_stack *stack);
 void		index_stack(t_l_stack *stack);

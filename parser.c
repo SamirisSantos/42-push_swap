@@ -12,14 +12,17 @@
 
 #include "push_swap.h"
 
-static int	not_number(char *s, t_stack *stack)
+static int	not_number(char *s, t_stack *stack, char **split)
 {
 	if (*s == '\0' || *s < '0' || *s > '9')
+	{
+		free_split(split);
 		exit_error(stack);
+	}
 	return (0);
 }
 
-int	parser_int(char *s, t_stack *stack)
+int	parser_int(char *s, t_stack *stack, char **split)
 {
 	long	nb;
 	int		sign;
@@ -32,13 +35,16 @@ int	parser_int(char *s, t_stack *stack)
 			sign = -1;
 		s++;
 	}
-	not_number(s, stack);
+	not_number(s, stack, split);
 	while (*s)
 	{
-		not_number(s, stack);
+		not_number(s, stack, split);
 		nb = nb * 10 + (*s - '0');
 		if ((sign == 1 && nb > INT_MAX) || (sign == -1 && - nb < INT_MIN))
+		{
+			free_split(split);
 			exit_error(stack);
+		}	
 		s++;
 	}
 	return ((int)sign * nb);
@@ -94,7 +100,7 @@ void	parse_args(t_stack *stack, int argc, char **argv)
 		j = 0;
 		while (split[j])
 		{
-			nb = parser_int(split[j], stack);
+			nb = parser_int(split[j], stack, split);
 			addl_stack(&stack->a, nb);
 			j++;
 		}
