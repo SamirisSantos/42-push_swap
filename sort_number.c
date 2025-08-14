@@ -12,49 +12,6 @@
 
 #include "push_swap.h"
 
-void	sort_three(t_stack *stack)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = stack->a->i;
-	b = stack->a->next->i;
-	c = stack->a->next->next->i;
-	if (a > b && b < c && a < c)
-		sa(stack);
-	else if (a > b && b > c)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (a > b && b < c && a > c)
-		ra(stack);
-	else if (a < b && b > c && a < c)
-	{
-		sa(stack);
-		ra(stack);
-	}
-	else if (a < b && b > c && a > c)
-		rra(stack);
-}
-
-void	sort_five(t_stack *stack)
-{
-	while (stack_size(stack->a) > 3)
-	{
-		if (stack->a->index == 0 || stack->a->index == 1)
-			pb(stack);
-		else
-			ra(stack);
-	}
-	sort_three(stack);
-	if (stack_size(stack->b) > 1 && stack->b->index < stack->b->next->index)
-		sb(stack);
-	pa(stack);
-	pa(stack);
-}
-
 void	sort_number_radix(t_stack *stack, int size)
 {
 	int	max_bits;
@@ -96,11 +53,10 @@ void	sort_number(t_stack *stack)
 	}
 	else if (size == 3)
 		sort_three(stack);
-	else if (size <= 5)
-	{
-		index_stack(stack->a);
+	 else if (size == 4)
+		sort_four(stack);
+	else if (size == 5)
 		sort_five(stack);
-	}
 	else
 	{
 		index_stack(stack->a);
