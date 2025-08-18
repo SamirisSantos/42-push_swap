@@ -17,7 +17,7 @@ CC = cc
 CFLAGS = -Wextra -Werror -Wall -g -O0
 
 SRCS = push_swap.c stack_utils.c parser.c pop_push_ops.c\
-		shift_down.c shift_up.c swap_ops.c sort_small.c\
+		shift_down.c shift_up.c swap_ops.c\
 		utils.c sort_number.c ft_split.c ft_substr.c
 
 OBJ = $(SRCS:.c=.o)
