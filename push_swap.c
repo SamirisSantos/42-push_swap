@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-void	printList(t_l_stack *stack)
-{
-	while (stack)
-	{
-		ft_putnbr(stack->i);
-		ft_putchar(' ');
-		stack = stack->next;
-	}
-	ft_putchar('\n');
-}
+// void	printList(t_l_stack *stack)
+// {
+// 	while (stack)
+// 	{
+// 		ft_putnbr(stack->i);
+// 		ft_putchar(' ');
+// 		stack = stack->next;
+// 	}
+// 	ft_putchar('\n');
+// }
 
 void	free_list(t_l_stack *start)
 {
@@ -68,7 +68,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	sort_number(&stack);
-	// printList(stack.a);
 	free_list(stack.a);
 	free_list(stack.b);
 	return (0);

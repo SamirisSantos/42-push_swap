@@ -44,7 +44,7 @@ int	parser_int(char *s, t_stack *stack, char **split)
 		{
 			free_split(split);
 			exit_error(stack);
-		}	
+		}
 		s++;
 	}
 	return ((int)sign * nb);
