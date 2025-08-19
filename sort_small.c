@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:26:34 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/08/19 15:50:08 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/08/19 15:59:37 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	sort_three(t_stack *stack)
 
 static void	sort_four(t_stack *stack)
 {
-	printList(stack->a);
+	// printList(stack->a);
 	index_stack(stack->a);
 	while (stack_size(stack->a) > 3)
 	{
@@ -56,7 +56,7 @@ static void	sort_four(t_stack *stack)
 
 static void	sort_five(t_stack *stack)
 {
-	printList(stack->a);
+	// printList(stack->a);
 	index_stack(stack->a);
 	while (stack_size(stack->a) > 3)
 	{

@@ -68,7 +68,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	sort_number(&stack);
-	printList(stack.a);
+	// printList(stack.a);
 	free_list(stack.a);
 	free_list(stack.b);
 	return (0);
