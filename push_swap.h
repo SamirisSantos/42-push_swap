@@ -76,7 +76,8 @@ void		parse_args(t_stack *stack, int argc, char **argv);
 
 void		sort_number_radix(t_stack *stack, int size);
 void		sort_number(t_stack *stack);
-void		sort_five(t_stack *stack);
-void		sort_three(t_stack *stack);
+void		sort_small(t_stack *stack);
+
+void	printList(t_l_stack *stack);
 
 #endif
