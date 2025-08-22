@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 -
 
-O **push_swap** é um projeto da [42 School](https://42.fr) objetivo é ordenar uma pilha de números inteiros usando apenas um conjunto limitado de operações em duas pilhas (`a` e `b`).  
+O **push_swap** é um projeto da [42 School](https://www.42porto.com/pt/) objetivo é ordenar uma pilha de números inteiros usando apenas um conjunto limitado de operações em duas pilhas (`a` e `b`).  
 A stack inicial é `a`, enquanto `b` começa vazia. O programa deve imprimir a menor sequência de operações necessárias para ordenar os números em ordem crescente.
 
 ---
